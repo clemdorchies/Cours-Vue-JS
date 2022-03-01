@@ -1,12 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Calculatrice from './components/Calculatrice.vue';
 </script>
 
 <template>
-  <HelloWorld />
-  <br>
-  <Calculatrice />
+  <RouterLink to="/">1</RouterLink>
+  <RouterLink to="/Calculatrice">2</RouterLink>
+  <RouterView />
 </template>
 
 <style>
