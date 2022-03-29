@@ -1,12 +1,20 @@
 <script>
 import axios from "axios";
 
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, provide, ref } from 'vue';
 
 export default defineComponent({
-  data: () => {
+  // data: () => {
+  //   return {
+  //     tweets: [],
+  //   }
+  // },
+  setup() {
+    const tweets = ref([]);
+    provide('message', tweets);
+
     return {
-      tweets: [],
+      tweets,
     }
   },
   mounted() {
@@ -23,11 +31,11 @@ export default defineComponent({
       console.log(error);
     });
   },
-  provide() {
-    return {
-      message: computed(() => this.tweets),
-    }
-  }
+  // provide() {
+  //   return {
+  //     message: computed(() => this.tweets),
+  //   }
+  // }
 });
 
 
